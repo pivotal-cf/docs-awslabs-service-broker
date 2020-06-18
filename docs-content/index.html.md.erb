@@ -1,6 +1,6 @@
 ---
-title: YOUR-PRODUCT-NAME (Beta)
-owner: Partners
+title: AWS Service Broker for VMware Tanzu
+owner:
 ---
 
 <strong><%= modified_date %></strong>
@@ -23,34 +23,15 @@ Broker for VMware Tanzu enables developers to manage APIs for their VMware Tanzu
 
 ## <a id='overview'></a>Overview
 
-**The overview describes the service that your product offers to VMware Tanzu developers.
-Make sure to overview the features of the integration.
-Don't focus only on the overview of your product that is being integrated.
-See below for an example.**
-
-The Apigee Edge Service Broker for VMware Tanzu registers a service broker with VMware Tanzu and exposes its service plans on the
-Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command
-Line Interface (cf CLI) and bind them to their apps.
-
-Creating an Apigee Edge for VMware Tanzu service instance and binding it to an app creates an Apigee Edge API proxy that
-handles requests for the app. This lets developers use the Apigee Edge management console to manage API request
-handling between clients and the app.
-
-**Note**: This overview appears under **OVERVIEW**, combined with the description above in the tile's listing on
-[Pivotal Network](http://network.pivotal.io).
+The AWS Service Broker for VMware Tanzu allows native AWS services to be exposed directly through application platforms that implement the Open Service Broker API, and provides simple integration of AWS Services directly within the application platform.
 
 ## <a id='features'></a>Key Features
 
-**Note**: This feature list appears under **FEATURES** in the tile's listing on
-[Pivotal Network](http://network.pivotal.io).
-Make sure you list the key features of the tile (the integration).
-We cannot accept a list of the key features of your product that we are integrating.
+AWS Service Broker for VMware Tanzu includes the following key features:
 
-YOUR-PRODUCT-NAME includes the following key features:
-
-* Feature one
-* Feature two
-* Feature three
+* 26 AWS Services Available
+* Customizable Templates
+* Multi-account provisioning
 
 
 
@@ -63,35 +44,35 @@ The following table provides version and version-support information about PRODU
     <th>Details</th>
     <tr>
         <td>Tile version</td>
-        <td>vYOUR-VERSION-NUMBER</td>
+        <td>v1.0.1</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>YOUR-RELEASE-DATE (Ex: July 1, 2019)</td>
+        <td>May 31, 2019</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>YOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>N/A</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>YOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
+        <td>2.9, 2.8, 2.7, 2.6, 2.5, 2.4, 2.3, 2.2, and 2.1</td>
     </tr>
     <tr>
         <td>Compatible Tanzu Application Service version(s)</td>
-        <td>YOUR-COMPATIBLE-TANZU-APPLICATION-SERVICE-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
+        <td>2.9, 2.8, 2.7, 2.6, 2.5, 2.4, 2.3, 2.2, and 2.1</td>
     </tr>
         <tr>
         <td>Compatible Tanzu Application Service for Windows version(s)</td>
-        <td>YOUR-COMPATIBLE-TANZU-APPLICATION-SERVICE-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
+        <td>N/A</td>
     </tr>
     <tr>
        <td>BOSH stemcell version</td>
-       <td>Ubuntu Xenial</td>
+       <td>N/A</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS?, Azure?, GCP?, OpenStack?, and vSphere?</td>
+        <td>AWS</td>
     </tr>
 </table>
 
@@ -102,11 +83,9 @@ The following table provides version and version-support information about PRODU
 A general requirement might be something like, "An AppDynamics account."
 A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
 
-YOUR-PRODUCT-NAME has the following requirements:
+AWS Service Broker for VMware Tanzu has the following requirements:
 
-+ PREREQUISITE-1
-
-+ PREREQUISITE-2
++ An foundation running in AWS.
 
 ## <a id="limitations"></a>Limitations
 
