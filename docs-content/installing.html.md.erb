@@ -15,7 +15,7 @@ This topic describes how to install and configure AWS Service Broker for VMware 
 
 #### Automated setup
 
-Prerequisites can be easily setup using a CloudFormation template available [here](https://github.com/awslabs/aws-servicebroker/blob/master/setup/prerequisites.yaml). Stack outputs provide the needed resource names for broker configuration.
+Prerequisites can be setup using a CloudFormation template available [at Github](https://github.com/awslabs/aws-servicebroker/blob/master/setup/prerequisites.yaml). Stack outputs provide the needed resource names for broker configuration.
 
 #### Manual setup
 
@@ -33,13 +33,13 @@ AttributeName=userid,KeyType=RANGE --global-secondary-indexes \
 
 You can customize the table name as needed and pass in your table name using –tableName
 
-### IAM 
- 
-By default the broker will use the same credentials for provisioning ServiceInstances and for broker operations like 
+### IAM
+
+By default the broker will use the same credentials for provisioning ServiceInstances and for broker operations like
 fetching the catalog and reading/writing metadata to DynamoDB.
 
 The user or role that the broker runs as requires the following policy:
- 
+
 ```json
 {
   "Version": "2012-10-17",
@@ -80,7 +80,7 @@ The user or role that the broker runs as requires the following policy:
 ```
 
 | **NOTE:** replace the `<REGION>`, `<ACCOUNT_ID>` and `<TABLE_NAME>` placeholders in the above json before creating the policy
- 
+
 The role/user used for provisioning requires additional permissions for provisioning, binding and deprovisioning ServiceInstances. By default this is the same user/role as the broker role, so can be added to that, or can be applied to a separate role, see [Managing Resources Via Assumed Role](/docs/README.md#managing-resources-via-assumed-role).
 
 ```json
@@ -151,12 +151,12 @@ If a custom catalog is published, this policy may need to be adapted.
 * Download the latest tile from the Tanzu Network
 * Login to Ops Manager and import the tile
 * Complete configuration in the `AWS Service Broker Configuration` section. Take note of the following fields:
-  * `Broker ID` - An ID to use for partitioning broker data in DynamoDb. if multiple brokers are used in the same AWS account, this value must be unique per broker. This is a customer selected string. 
-  * `AWS Access Key ID` and `AWS Secret Access` (_**REQUIRED**_) -  Specify the credentials for the user created in the prerequisites section of this guide. If you are using an ec2 instance role attached to the broker hosts, leave these fields blank. 
-  * `Target AWS Account ID` and `Target IAM Role Name` - if you would like to provision into a different account, or use a 
-  different role for provisioning, populate these with the account and role details. The role specified must allow the 
+  * `Broker ID` - An ID to use for partitioning broker data in DynamoDb. if multiple brokers are used in the same AWS account, this value must be unique per broker. This is a customer selected string.
+  * `AWS Access Key ID` and `AWS Secret Access` (_**REQUIRED**_) -  Specify the credentials for the user created in the prerequisites section of this guide. If you are using an ec2 instance role attached to the broker hosts, leave these fields blank.
+  * `Target AWS Account ID` and `Target IAM Role Name` - if you would like to provision into a different account, or use a
+  different role for provisioning, populate these with the account and role details. The role specified must allow the
   broker user/role to assume it
-  * `AWS Region ` - this is the default region for the broker to deploy services into, and must match the region that the 
+  * `AWS Region ` - this is the default region for the broker to deploy services into, and must match the region that the
   DynamoDB table created in the prerequisisites section of this guide was created in (this will be decoupled in an upcoming update).
   * `Amazon S3 Bucket` - specify `awsservicebroker`
   * `Amazon S3 Key Prefix` - specify `templates/latest/`
