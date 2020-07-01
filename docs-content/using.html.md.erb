@@ -7,18 +7,16 @@ owner:
 
 This topic describes how to use AWS Service Broker for VMware Tanzu.
 
-#<a id='using'></a> Using AWS Service Broker for VMware Tanzu
-
 ![Illustrates how application platforms can use the broker to provision and bind to AWS services.](/images/architecture.png)
 
-## Provisioning and binding services
+##<a id="provision-bind"></a> Provisioning and binding services
 
 Documentation for all of the available plans, their parameters and binding outputs are available in the
 [AWS Service Broker GitHub repository](https://github.com/awslabs/aws-servicebroker/tree/master/templates)
 
-## Configuration tasks
+##<a id="config-tasks"></a> Configuration tasks
 
-### Passing In AWS credentials via parameters
+###<a id="pass-in-creds"></a> Passing In AWS credentials via parameters
 
 The **aws_access_key**, **aws_secret_key** can be passed in as parameters to the provision request.
 
@@ -49,7 +47,7 @@ Parameters:
   aws_secret_key: abcdabcdabcdabcdabcdabcdabcdabcd
 ```
 
-### Managing Resources Via Assumed Role
+###<a id="manage-resources-via-role"></a> Managing Resources Via Assumed Role
 
 The aws-service-broker has the ability to assume a role for all resources it manages.
 
@@ -98,13 +96,13 @@ svcat provision my-ingress-api-gw \
     -p VpcId=vpc-1234567887654321,target_account_id=123456654321,target_role_name=aws-service-broker-worker
 ````
 
-### Overriding the default AWS region
+###<a id="override-default-region"></a> Overriding the default AWS region
 
 The **region** can be passed in as a parameter to the provision request.
 
 If provided, it will be used in place of the aws service catalog process region.
 
-### Parameter Overrides
+###<a id="parameter-overrides"></a> Parameter Overrides
 
 > **NOTE:** Current releases of the Service Broker have the DynamoDB mechanism disabled, please use the Environment Variable approach to prescribing overrides
 
@@ -224,7 +222,7 @@ PARAM_OVERRIDE_awsservicebroker_<ORG_GUID/CLUSTER_ID>_<SPACE_GUID/NAMESPACE>_all
 
 
 
-### Custom Catalog
+###<a id="custom-catalog"></a> Custom Catalog
 
 You can configure the broker to point to your own S3 bucket (which can be private or public) containing
 CloudFormation templates and ServiceClass specs. The bucket, prefix and AWS region that the broker scans for ServiceClasses is configured using the
@@ -232,13 +230,13 @@ CloudFormation templates and ServiceClass specs. The bucket, prefix and AWS regi
 
 * [Example -spec.yaml file](/docs/examples/example-main.yaml)
 
-### Template Metadata Generator
+###<a id="template-metadata-generator"></a> Template Metadata Generator
 
 A tool that examines the parameters of the JSON Cloudformation template and automatically creates the Service Broker Metadata (AWS::ServiceBroker::Specification) for the template and outputs in JSON and YAML format. It will include all parameters in the template into the metadata.
 
 https://github.com/ndrest-amzn/ServiceBrokerMetaGen
 
-### Template Documentation Generator
+###<a id="template-doc-generator"></a> Template Documentation Generator
 
 A tool tha automatically creates the Service Broker doc Readme.md from the Cloudformation Template provided. It will include all parameters in the template into the Readme.md.
 
