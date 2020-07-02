@@ -140,6 +140,7 @@ The structure of an override record is:
 ```
 
 > Notes:
+
 > * `id`, `userid`, `parameter_name` and `parameter_value` are required.
 > * `org_guid` and `space_guid` are Cloud Foundry specific, and cannot be combined with `cluster_id` and `namespace` (Kubernetes specific)
 > * If a parameter is overridden globally (none of the optional fields are provided) and the `-prescribeOverrides` flag is passed, it is removed from the available parameters presented by the application platform's UI
@@ -228,7 +229,8 @@ You can configure the broker to point to your own S3 bucket (which can be privat
 CloudFormation templates and ServiceClass specifications. The bucket, prefix and AWS region that the broker scans for ServiceClasses is configured using the
 `-s3Bucket`, `-s3Key` and `-s3Region` commandline switches.
 
-* [Example -spec.yaml file](/docs/examples/example-main.yaml)
+[//]: # ( The link below needs to be fixed.)
+[//]: # ( * [Example -spec.yaml file](/docs/examples/example-main.yaml))
 
 ###<a id="template-metadata-generator"></a> Template Metadata Generator
 
