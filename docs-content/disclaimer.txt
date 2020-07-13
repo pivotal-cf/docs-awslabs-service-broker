@@ -1,0 +1,1 @@
+This software is distributed on the Tanzu Network with no support provided. For all support and feedback on this software please visit the GitHub repository for this project here: https://github.com/awslabs/aws-servicebroker
