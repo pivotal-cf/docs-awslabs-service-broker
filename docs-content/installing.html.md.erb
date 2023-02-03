@@ -91,7 +91,7 @@ The role/user used for provisioning requires additional permissions for provisio
 deprovisioning ServiceInstances.
 By default, this is the same user/role as the broker role, so add to that,
 or apply to a separate role,
-see [Managing Resources Via Assumed Role](installing.html#managing-resources-via-assumed-role).
+see [Managing Resources Via Assumed Role](using.html#manage-resources-via-role).
 
 ```json
 {
@@ -162,16 +162,16 @@ If a custom catalog is published, this policy might need to be adapted.
 
 1. Download the latest tile from the Tanzu Network
 2. Log in to Ops Manager and import the tile
-3. Complete configuration in the `AWS Service Broker Configuration` section. Take note of the following fields:
-  * `Broker ID` - An ID to use for partitioning broker data in DynamoDb. if multiple brokers are used in the same AWS account, this value must be unique per broker. This is a customer selected string.
-  * `AWS Access Key ID` and `AWS Secret Access` (_**REQUIRED**_) -  Specify the credentials for the user created in the prerequisites section of this guide. If you are using an ec2 instance role attached to the broker hosts, leave these fields blank.
-  * `Target AWS Account ID` and `Target IAM Role Name` - if you need to provision into a different account, or use a
+3. Complete configuration in the **AWS Service Broker Configuration** section. Take note of the following fields:
+  * **Broker ID** - An ID to use for partitioning broker data in DynamoDb. if multiple brokers are used in the same AWS account, this value must be unique per broker. This is a customer selected string.
+  * **AWS Access Key ID** and **AWS Secret Access** (_**REQUIRED**_) -  Specify the credentials for the user created in the prerequisites section of this guide. If you are using an ec2 instance role attached to the broker hosts, leave these fields blank.
+  * **Target AWS Account ID** and **Target IAM Role Name** - if you need to provision into a different account, or use a
   different role for provisioning, populate these with the account and role details. The role specified must allow the
-  broker user/role to assume it
-  * `AWS Region ` - this is the default region for the broker to deploy services into, and must match the region that the
+  broker user/role to assume it.
+  * **AWS Region** - this is the default region for the broker to deploy services into, and must match the region that the
   DynamoDB table created in the prerequisisites section of this guide was created in (this will be decoupled in an upcoming update).
-  * `Amazon S3 Bucket` - specify `awsservicebroker`
-  * `Amazon S3 Key Prefix` - specify `templates/latest/`
-  * `Amazon S3 Region` - specify `us-east-1`
-  * `Amazon S3 Key Suffix` - specify `-main.yaml`
-  * `Amazon DynamoDB table name` - specify the name of the table created in the prerequisites section of this guide, default is `awssb`
+  * **Amazon S3 Bucket** - specify `awsservicebroker`
+  * **Amazon S3 Key Prefix** - specify `templates/latest/`
+  * **Amazon S3 Region** - specify `us-east-1`
+  * **Amazon S3 Key Suffix** - specify `-main.yaml`
+  * **Amazon DynamoDB table name** - specify the name of the table created in the prerequisites section of this guide, default is `awssb`
